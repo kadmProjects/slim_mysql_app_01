@@ -3,3 +3,6 @@
 !/logs/README.md
 /cache/
 /.idea/
+/node_modules/
+/public/build/css/app.min.css
+/public/build/js/app.min.js
