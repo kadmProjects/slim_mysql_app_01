@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Slim-app-01</title>
+   <link rel="stylesheet" href="{{ base_url() }}/build/css/app.min.css"/>
+   <script src="{{ base_url() }}/build/js/app.min.js" type="text/javascript" charset="utf-8" async defer></script>
+</head>
+<body>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <br>
+            <h2>Slim CRUD Application 01</h2>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            {% block top_btn_section %}{% endblock %}
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-2"></div>
+         <div class="col-md-8">
+            {% block middle %}{% endblock %}
+         </div>
+         <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            {% block movies_list %}{% endblock %}
+         </div>
+      </div>
+   </div>
+</body>
+</html>

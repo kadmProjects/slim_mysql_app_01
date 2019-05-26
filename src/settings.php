@@ -12,7 +12,8 @@ return [
         // Twig renderer settings
         'twig' => [
             'view_path' => __DIR__ . '/app/views/',
-            'cache_path' => __DIR__ . '/../cache',
+//            'cache_path' => __DIR__ . '/../cache',
+            'cache_path' => false,
         ],
 
         // Monolog settings
@@ -24,10 +25,14 @@ return [
 
         // Database settings
         'db' => [
+            'driver' => 'mysql',
             'host' => 'localhost',
-            'user' => 'root',
-            'pass' => '123456',
-            'dbname' => 'slim-app-01',
+            'database' => 'slim_app_01',
+            'username' => 'root',
+            'password' => '123456',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
         ]
     ],
 ];
