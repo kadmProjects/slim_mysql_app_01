@@ -55,11 +55,24 @@ class HomeController {
       return $this->view->render($res, 'home/edit.twig', $movie);
    }
 
-   public function update ($req, $res, $arg) {
-      echo 'this is update page';
+   public function update ($req, $res, $args) {
+      $movie = (array)$this->table->find($req->getParam('id'));
+
+      $movie['title'] = $req->getParam('movie_name');
+      $movie['director'] = $req->getParam('director');
+      $movie['main_actor'] = $req->getParam('main_actor');
+      $movie['production_company'] = $req->getParam('company');
+      $movie['released_date'] = $req->getParam('released_date');
+
+      $this->table->update($movie);
+
+      return $res->withRedirect($this->router->pathFor('showMovies'));
    }
 
    public function destroy ($req, $res, $arg) {
-      echo 'this is index page';
+      $id = $req->getParam('id');
+      $this->table->delete($id);
+
+      return $res->withRedirect($this->router->pathFor('showMovies'));
    }
 }

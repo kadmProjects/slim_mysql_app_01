@@ -36,7 +36,9 @@
          <td>
             <a class="btn btn-sm btn-info" href="{{ base_url()}}/home/edit/{{ movie.id }}">Update</a>
             <a class="btn btn-sm btn-success" href="{{ base_url()}}/home/show/{{ movie.id }}">View</a>
-            <form action="home/{{ movie.id }}" method="post" accept-charset="utf-8">
+            <form action="{{ base_url()}}/home/delete" method="post" accept-charset="utf-8">
+               <input type="hidden" name="_METHOD" value="delete">
+               <input type="hidden" name="id" value="{{ movie.id }}">
                <button class="btn btn-sm btn-danger" type="submit">Delete</button>
             </form>
          </td>

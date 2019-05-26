@@ -12,8 +12,9 @@
          <b>Add new movie</b>
       </div>
       <div class="card-body">
-         <form action="{{ base_url() }}/home/update" method="POST" accept-charset="utf-8">
-            <input name="_method" type="hidden" value="PATCH">
+         <form action="{{ base_url() }}/home/update" method="post" accept-charset="utf-8">
+            <input type="hidden" name="_METHOD" value="patch">
+            <input type="hidden" name="id" value="{{ id }}">
             <div class="form-group row">
                <label for="movie_name" class="col-sm-2 col-form-label">Movie Name</label>
                <div class="col-sm-10">

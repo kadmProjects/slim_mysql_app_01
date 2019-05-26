@@ -35,17 +35,17 @@ return function (App $app) {
    });
 
    $app->get('/home/edit/{id}', function (Request $request, Response $response, array $args) use ($container) {
-      $container->get('logger')->info("Slim-app-01 '/edit' route");
+      $container->get('logger')->info("Slim-app-01 '/home/edit' route");
       return $container->get('home')->edit($request, $response, $args);
    });
 
    $app->patch('/home/update', function (Request $request, Response $response, array $args) use ($container) {
-      $container->get('logger')->info("Slim-app-01 '/update' route");
+      $container->get('logger')->info("Slim-app-01 '/home/update' route");
       return $container->get('home')->update($request, $response, $args);
    });
 
-   $app->delete('/home/delete/{id}', function (Request $request, Response $response, array $args) use ($container) {
-      $container->get('logger')->info("Slim-app-01 '/destroy' route");
+   $app->delete('/home/delete', function (Request $request, Response $response, array $args) use ($container) {
+      $container->get('logger')->info("Slim-app-01 '/home/delete' route");
       return $container->get('home')->destroy($request, $response, $args);
    });
 };
