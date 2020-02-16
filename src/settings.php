@@ -27,7 +27,7 @@ return [
         'db' => [
             'driver' => 'mysql',
             'host' => 'localhost',
-            'database' => 'slim_app_01',
+            'database' => 'slim_mysql_app_01',
             'username' => 'root',
             'password' => '123456',
             'charset'   => 'utf8',
